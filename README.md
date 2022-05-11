@@ -4,8 +4,8 @@
 Project 0x16 - Simple Shell - A simple UNIX command interpreter that executes commands read from the standard input or from a file
 
 # Resources
-Unix shell
-Thompson shell
+Unix shell br
+Thompson shell /br
 Ken Thompson
 Everything you need to know to start coding your own shell concept page
 man or help:
@@ -102,10 +102,10 @@ $ cat test_ls_2
 /bin/ls
 $
 $ cat test_ls_2 | ./hsh
-hsh main.c shell.c test_ls_2
+hsh main.c shell.c test_ls_2 
 hsh main.c shell.c test_ls_2
 $
 
 # Authors
-Umar Amina Abdulmumin and
+Developed By Umar Amina Abdulmumin and
 Itaman Julius
