@@ -4,15 +4,8 @@
 Project 0x16 - Simple Shell - A simple UNIX command interpreter that executes commands read from the standard input or from a file
 
 # Resources
-<<<<<<< HEAD
 Unix shell
-
 Thompson shell
-
-=======
-Unix shell br
-Thompson shell /br
->>>>>>> 25ac92033650aeebfcb7c19c636ed2e943739ccc
 Ken Thompson
 
 Everything you need to know to start coding your own shell concept page
@@ -98,9 +91,9 @@ wait3 (man 2 wait3)
 wait4 (man 2 wait4)
 write (man 2 write)
 
-#Compilation
-Your shell will be compiled this way:
+# Compilation
 
+Your shell will be compiled this way:
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 
 # Testing
