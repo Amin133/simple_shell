@@ -1,70 +1,26 @@
 #include "shell.h"
-
 /**
- * free_data - frees data structure
- *
- * @datash: data structure
- * Return: no return
+ * main - shell skeleton
+ * @argc: number of arguments in the input
+ * @argv: arguments in the input
+ * @envp: environment variables
+ * Return: 0 on Success
  */
-void free_data(data_shell *datash)
+int main(int argc, char *argv[], char *envp[])
 {
-	unsigned int i;
 
-	for (i = 0; datash->_environ[i]; i++)
+	if (argc == 1)
 	{
-		free(datash->_environ[i]);
+		_noargv(argv, envp);
 	}
-
-	free(datash->_environ);
-	free(datash->pid);
-}
-
-/**
- * set_data - Initialize data structure
- *
- * @datash: data structure
- * @av: argument vector
- * Return: no return
- */
-void set_data(data_shell *datash, char **av)
-{
-	unsigned int i;
-
-	datash->av = av;
-	datash->input = NULL;
-	datash->args = NULL;
-	datash->status = 0;
-	datash->counter = 1;
-
-	for (i = 0; environ[i]; i++)
-		;
-
-	datash->_environ = malloc(sizeof(char *) * (i + 1));
-
-	for (i = 0; environ[i]; i++)
+	else if (argc == 2)
 	{
-		datash->_environ[i] = (environ[i]);
+		_yesargv(argv, envp);
 	}
-
-	datash->_environ[i] = NULL;
-}
-
-/**
- * main - Entry point
- *
- * @ac: argument count
- * @av: argument vector
- *
- * Return: 0 on success.
- */
-int main(int ac, __attribute__((unused)) char **av)
-{
-	data_shell datash;
-	(void) ac;
-
-	signal(SIGINT, SIG_IGN);
-	free_data(&datash);
-	if (datash.status < 0)
-		return (255);
-	return (datash.status);
+	else
+	{
+		write(STDIN_FILENO, "NO ADMITTED AMOUNT OF ARGUMENTS", 31);
+		write(STDIN_FILENO, "\n", 1);
+	}
+	return (0);
 }
