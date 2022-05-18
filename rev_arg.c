@@ -59,7 +59,7 @@ void functions(char *line, int loop, char *argv[], char ***m, int *e, char *f)
 		value = rev(args, loop, line, argv, m, e, f);
 		if (value != 0)
 		{
-			args = checkbin(args, *m);
+			args = env_check(args, *m);
 			if (args)
 				_frk(args, line, i, loop, argv, *e, *m, f);
 		}
