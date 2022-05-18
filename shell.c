@@ -43,11 +43,10 @@ void set_data(data_shell *datash, char **av)
 
 	for (i = 0; environ[i]; i++)
 	{
-		datash->_environ[i] = _strdup(environ[i]);
+		datash->_environ[i] = (environ[i]);
 	}
 
 	datash->_environ[i] = NULL;
-	datash->pid = aux_itoa(getpid());
 }
 
 /**
@@ -58,14 +57,12 @@ void set_data(data_shell *datash, char **av)
  *
  * Return: 0 on success.
  */
-int main(int ac, char **av)
+int main(int ac, __attribute__((unused)) char **av)
 {
 	data_shell datash;
 	(void) ac;
 
-	signal(SIGINT, get_sigint);
-	set_data(&datash, av);
-	shell_loop(&datash);
+	signal(SIGINT, SIG_IGN);
 	free_data(&datash);
 	if (datash.status < 0)
 		return (255);
